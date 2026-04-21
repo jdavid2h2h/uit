@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarjeta de Presentacion</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <div class="page-container">
+      <header class="topbar">
+        <div class="topbar-inner">
+          <span class="icon-back" aria-hidden="true">&#10094;</span>
+          <span class="topbar-title">TIU VIRTUAL</span>
+        </div>
+      </header>
+
+      <main class="content-wrap">
+        <section class="content-section">
+          <div class="profile-holder">
+            <div class="hero-card">
+              <div class="floating-cloud cloud-1">
+                <div class="cloud-shape">
+                  <div class="cloud-part cloud-part-1"></div>
+                  <div class="cloud-part cloud-part-2"></div>
+                  <div class="cloud-part cloud-part-3"></div>
+                  <div class="cloud-part cloud-part-4"></div>
+                </div>
+              </div>
+              <div class="floating-cloud cloud-2">
+                <div class="cloud-shape">
+                  <div class="cloud-part cloud-part-1"></div>
+                  <div class="cloud-part cloud-part-2"></div>
+                  <div class="cloud-part cloud-part-3"></div>
+                  <div class="cloud-part cloud-part-4"></div>
+                </div>
+              </div>
+              <div class="floating-cloud cloud-3">
+                <div class="cloud-shape">
+                  <div class="cloud-part cloud-part-1"></div>
+                  <div class="cloud-part cloud-part-2"></div>
+                  <div class="cloud-part cloud-part-3"></div>
+                  <div class="cloud-part cloud-part-4"></div>
+                </div>
+              </div>
+              <div class="floating-cloud cloud-4">
+                <div class="cloud-shape">
+                  <div class="cloud-part cloud-part-1"></div>
+                  <div class="cloud-part cloud-part-2"></div>
+                  <div class="cloud-part cloud-part-3"></div>
+                  <div class="cloud-part cloud-part-4"></div>
+                </div>
+              </div>
+              <div class="floating-cloud cloud-5">
+                <div class="cloud-shape">
+                  <div class="cloud-part cloud-part-1"></div>
+                  <div class="cloud-part cloud-part-2"></div>
+                  <div class="cloud-part cloud-part-3"></div>
+                  <div class="cloud-part cloud-part-4"></div>
+                </div>
+              </div>
+
+              <div class="hero-center">
+                <div class="clock-wrap">
+                  <div class="clock-chip">
+                    <p id="clock" class="clock-text">00:00:00</p>
+                  </div>
+                  <p id="clock-date" class="clock-date">Lunes, 01 Ene. 2026</p>
+                </div>
+
+                <div class="avatar-wrap">
+                  <div class="avatar-inner">
+                    <img class="avatar-image" src="./avatar.png" alt="Imagen de usuario" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="skyline-wrap">
+                <div class="skyline">
+                  <div class="skyline-ground"></div>
+                  <div class="skyline-ring"></div>
+                  <div class="skyline-dots"></div>
+                  <div class="skyline-tower"></div>
+                  <div class="skyline-tower-top"><div class="skyline-tower-core"></div></div>
+                  <div class="skyline-windows">
+                    <span class="skyline-window"></span><span class="skyline-window"></span><span class="skyline-window"></span>
+                    <span class="skyline-window"></span><span class="skyline-window"></span><span class="skyline-window"></span>
+                    <span class="skyline-window"></span><span class="skyline-window"></span><span class="skyline-window"></span>
+                  </div>
+                  <div class="skyline-bars">
+                    <span class="skyline-bar" style="height:34px"></span>
+                    <span class="skyline-bar" style="height:48px"></span>
+                    <span class="skyline-bar" style="height:28px"></span>
+                    <span class="skyline-bar" style="height:44px"></span>
+                    <span class="skyline-bar" style="height:30px"></span>
+                    <span class="skyline-bar" style="height:52px"></span>
+                    <span class="skyline-bar" style="height:38px"></span>
+                    <span class="skyline-bar" style="height:32px"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-header">
+                  <h1 class="card-name">JUAN DAVID V***H***</h1>
+                  <p class="card-label">Codigo de alumno:</p>
+                  <p class="card-value">20251G048</p>
+                  <p class="card-label">ID Banner:</p>
+                  <p class="card-value">N05005332</p>
+                  <p class="card-career">ARQUITECTURA</p>
+                  <p class="card-campus">&#128205; Campus Monterrico</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var clockEl = document.getElementById("clock");
+      var dateEl = document.getElementById("clock-date");
+      if (!clockEl || !dateEl) return;
+
+      var timeFormatter = new Intl.DateTimeFormat("es-PE", {
+          timeZone: "America/Lima",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: false
+      });
+      var dateFormatter = new Intl.DateTimeFormat("es-PE", {
+        timeZone: "America/Lima",
+        weekday: "long",
+        day: "2-digit",
+        month: "short",
+        year: "numeric"
+      });
+
+      function capitalize(text) {
+        return text.charAt(0).toUpperCase() + text.slice(1);
+      }
+
+      function updateClock() {
+        var now = new Date();
+        clockEl.textContent = timeFormatter.format(now);
+        dateEl.textContent = capitalize(dateFormatter.format(now));
+      }
+
+      updateClock();
+      setInterval(updateClock, 1000);
+    })();
+  </script>
+</body>
+</html>
