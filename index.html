@@ -2,116 +2,109 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tarjeta de Presentacion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>TIU VIRTUAL</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#000000">
+  <link rel="apple-touch-icon" href="icon-192x192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <div class="page-shell">
-    <div class="page-container">
-      <header class="topbar">
-        <div class="topbar-inner">
-          <span class="icon-back" aria-hidden="true">&#10094;</span>
-          <span class="topbar-title">TIU VIRTUAL</span>
+  <div class="device-shell">
+    <div class="mobile-frame">
+
+      <!-- Barra Superior (App Bar) -->
+      <header class="app-bar">
+        <div class="app-bar-left">
+          <button class="back-button" aria-label="Regresar" onclick="history.back()">
+            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <h1 class="app-title">TIU VIRTUAL</h1>
         </div>
       </header>
 
-      <main class="content-wrap">
-        <section class="content-section">
-          <div class="profile-holder">
-            <div class="hero-card">
-              <div class="floating-cloud cloud-1">
-                <div class="cloud-shape">
-                  <div class="cloud-part cloud-part-1"></div>
-                  <div class="cloud-part cloud-part-2"></div>
-                  <div class="cloud-part cloud-part-3"></div>
-                  <div class="cloud-part cloud-part-4"></div>
-                </div>
-              </div>
-              <div class="floating-cloud cloud-2">
-                <div class="cloud-shape">
-                  <div class="cloud-part cloud-part-1"></div>
-                  <div class="cloud-part cloud-part-2"></div>
-                  <div class="cloud-part cloud-part-3"></div>
-                  <div class="cloud-part cloud-part-4"></div>
-                </div>
-              </div>
-              <div class="floating-cloud cloud-3">
-                <div class="cloud-shape">
-                  <div class="cloud-part cloud-part-1"></div>
-                  <div class="cloud-part cloud-part-2"></div>
-                  <div class="cloud-part cloud-part-3"></div>
-                  <div class="cloud-part cloud-part-4"></div>
-                </div>
-              </div>
-              <div class="floating-cloud cloud-4">
-                <div class="cloud-shape">
-                  <div class="cloud-part cloud-part-1"></div>
-                  <div class="cloud-part cloud-part-2"></div>
-                  <div class="cloud-part cloud-part-3"></div>
-                  <div class="cloud-part cloud-part-4"></div>
-                </div>
-              </div>
-              <div class="floating-cloud cloud-5">
-                <div class="cloud-shape">
-                  <div class="cloud-part cloud-part-1"></div>
-                  <div class="cloud-part cloud-part-2"></div>
-                  <div class="cloud-part cloud-part-3"></div>
-                  <div class="cloud-part cloud-part-4"></div>
-                </div>
-              </div>
+      <!-- Contenido Principal -->
+      <main class="main-content">
+        <!-- Símbolo SVG vectorial de nube idéntico al diseño original -->
+        <svg style="display:none;" xmlns="http://www.w3.org/2000/svg">
+          <symbol id="cloud-vector" viewBox="0 0 56 25">
+            <path d="M 5 25 C 2.2 25 0 22.8 0 20 C 0 17.5 1.8 15.4 4.2 15.1 C 4.6 9.8 9 5.5 14.5 5.5 C 16 5.5 17.4 5.9 18.7 6.6 C 21 2.5 25.5 0 30.5 0 C 37.8 0 43.8 5.4 44.8 12.5 C 45.6 12.3 46.5 12.2 47.5 12.2 C 52.2 12.2 56 16 56 20.7 C 56 23.1 54 25 51.5 25 Z"/>
+          </symbol>
+        </svg>
 
-              <div class="hero-center">
-                <div class="clock-wrap">
-                  <div class="clock-chip">
-                    <p id="clock" class="clock-text">00:00:00</p>
-                  </div>
-                  <p id="clock-date" class="clock-date">Lunes, 01 Ene. 2026</p>
-                </div>
+        <!-- Capa de nubes estilizadas con animación continua hacia la izquierda -->
+        <div class="clouds-sky" aria-hidden="true">
+          <div class="clouds-drift-track">
+            <!-- Pista 1 -->
+            <div class="clouds-group">
+              <svg class="cloud-svg c-1"><use href="#cloud-vector"/></svg>
+              <svg class="cloud-svg c-2"><use href="#cloud-vector"/></svg>
+              <svg class="cloud-svg c-3"><use href="#cloud-vector"/></svg>
+              <svg class="cloud-svg c-4"><use href="#cloud-vector"/></svg>
+              <svg class="cloud-svg c-5"><use href="#cloud-vector"/></svg>
+              <svg class="cloud-svg c-6"><use href="#cloud-vector"/></svg>
+              <svg class="cloud-svg c-7"><use href="#cloud-vector"/></svg>
+              <svg class="cloud-svg c-8"><use href="#cloud-vector"/></svg>
+            </div>
+            <!-- Pista 2 (clon idéntico para ciclo infinito continuo sin saltos) -->
+            <div class="clouds-group">
+              <svg class="cloud-svg c-1"><use href="#cloud-vector"/></svg>
+              <svg class="cloud-svg c-2"><use href="#cloud-vector"/></svg>
+              <svg class="cloud-svg c-3"><use href="#cloud-vector"/></svg>
+              <svg class="cloud-svg c-4"><use href="#cloud-vector"/></svg>
+              <svg class="cloud-svg c-5"><use href="#cloud-vector"/></svg>
+              <svg class="cloud-svg c-6"><use href="#cloud-vector"/></svg>
+              <svg class="cloud-svg c-7"><use href="#cloud-vector"/></svg>
+              <svg class="cloud-svg c-8"><use href="#cloud-vector"/></svg>
+            </div>
+          </div>
+        </div>
 
-                <div class="avatar-wrap">
-                  <div class="avatar-inner">
-                    <img class="avatar-image" src="./avatar.png" alt="Imagen de usuario" />
-                  </div>
-                </div>
-              </div>
+        <!-- Zona del Reloj Digital y Fecha -->
+        <section class="clock-section">
+          <div class="clock-card">
+            <span id="clock" class="digital-time">22:56:56</span>
+          </div>
+          <p id="clock-date" class="digital-date">Miércoles, 16 Sept 2026</p>
+        </section>
 
-              <div class="skyline-wrap">
-                <div class="skyline">
-                  <div class="skyline-ground"></div>
-                  <div class="skyline-ring"></div>
-                  <div class="skyline-dots"></div>
-                  <div class="skyline-tower"></div>
-                  <div class="skyline-tower-top"><div class="skyline-tower-core"></div></div>
-                  <div class="skyline-windows">
-                    <span class="skyline-window"></span><span class="skyline-window"></span><span class="skyline-window"></span>
-                    <span class="skyline-window"></span><span class="skyline-window"></span><span class="skyline-window"></span>
-                    <span class="skyline-window"></span><span class="skyline-window"></span><span class="skyline-window"></span>
-                  </div>
-                  <div class="skyline-bars">
-                    <span class="skyline-bar" style="height:34px"></span>
-                    <span class="skyline-bar" style="height:48px"></span>
-                    <span class="skyline-bar" style="height:28px"></span>
-                    <span class="skyline-bar" style="height:44px"></span>
-                    <span class="skyline-bar" style="height:30px"></span>
-                    <span class="skyline-bar" style="height:52px"></span>
-                    <span class="skyline-bar" style="height:38px"></span>
-                    <span class="skyline-bar" style="height:32px"></span>
-                  </div>
-                </div>
-              </div>
+        <!-- Foto de Perfil Circular -->
+        <section class="avatar-section">
+          <div class="avatar-container">
+            <img class="avatar-img" src="./avatar.png" alt="Foto de perfil del alumno" />
+          </div>
+        </section>
 
-              <div class="info-card">
-                <div class="info-header">
-                  <h1 class="card-name">JUAN DAVID V***H***</h1>
-                  <p class="card-label">Codigo de alumno:</p>
-                  <p class="card-value">20251G048</p>
-                  <p class="card-label">ID Banner:</p>
-                  <p class="card-value">N05005332</p>
-                  <p class="card-career">ARQUITECTURA</p>
-                  <p class="card-campus">&#128205; Campus Monterrico</p>
-                </div>
-              </div>
+        <!-- Tarjeta de Información (Card View) -->
+        <section class="info-card">
+          <div class="student-name-container">
+            <h2 class="student-name-line">JOSE LUIS A<span class="name-stars">***</span></h2>
+            <h2 class="student-name-line">H<span class="name-stars">***</span></h2>
+          </div>
+
+          <div class="details-list">
+            <div class="detail-item">
+              <span class="detail-label">Código de alumno:</span>
+              <strong class="detail-value" id="studentCode">20250H059</strong>
+            </div>
+
+            <div class="detail-item">
+              <span class="detail-label">ID Banner:</span>
+              <strong class="detail-value" id="studentBanner">N01410525</strong>
+            </div>
+
+            <div class="detail-career">
+              <span id="studentCareer">INGENIERÍA DE SISTEMAS DE INFORMACIÓN</span>
+            </div>
+
+            <div class="detail-campus">
+              <span class="campus-pin">📍</span>
+              <span class="campus-text" id="studentCampus">Campus Monterrico</span>
             </div>
           </div>
         </section>
@@ -123,36 +116,65 @@
     (function () {
       var clockEl = document.getElementById("clock");
       var dateEl = document.getElementById("clock-date");
-      if (!clockEl || !dateEl) return;
 
       var timeFormatter = new Intl.DateTimeFormat("es-PE", {
-          timeZone: "America/Lima",
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-          hour12: false
+        timeZone: "America/Lima",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false
       });
+
       var dateFormatter = new Intl.DateTimeFormat("es-PE", {
         timeZone: "America/Lima",
         weekday: "long",
-        day: "2-digit",
+        day: "numeric",
         month: "short",
         year: "numeric"
       });
 
-      function capitalize(text) {
-        return text.charAt(0).toUpperCase() + text.slice(1);
+      function formatCustomDate(d) {
+        var parts = dateFormatter.formatToParts(d);
+        var weekday = "", day = "", month = "", year = "";
+        parts.forEach(function (p) {
+          if (p.type === "weekday") weekday = p.value;
+          if (p.type === "day") day = p.value;
+          if (p.type === "month") month = p.value.replace(".", "");
+          if (p.type === "year") year = p.value;
+        });
+
+        function cap(s) {
+          return s ? s.charAt(0).toUpperCase() + s.slice(1) : "";
+        }
+
+        var monthMap = {
+          "ene": "Ene", "feb": "Feb", "mar": "Mar", "abr": "Abr",
+          "may": "Mayo", "jun": "Jun", "jul": "Jul", "ago": "Ago",
+          "set": "Sept", "sep": "Sept", "sept": "Sept", "oct": "Oct", "nov": "Nov", "dic": "Dic"
+        };
+        var cleanMonth = monthMap[month.toLowerCase()] || cap(month);
+
+        return cap(weekday) + ", " + day + " " + cleanMonth + " " + year;
       }
 
       function updateClock() {
         var now = new Date();
-        clockEl.textContent = timeFormatter.format(now);
-        dateEl.textContent = capitalize(dateFormatter.format(now));
+        if (clockEl) {
+          clockEl.textContent = timeFormatter.format(now);
+        }
+        if (dateEl) {
+          dateEl.textContent = formatCustomDate(now);
+        }
       }
 
       updateClock();
       setInterval(updateClock, 1000);
     })();
+  </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
   </script>
 </body>
 </html>
