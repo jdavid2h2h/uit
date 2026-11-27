@@ -13,7 +13,7 @@
       <!-- Barra Superior (App Bar) -->
       <header class="app-bar">
         <div class="app-bar-left">
-          <button class="back-button" aria-label="Regresar" onclick="window.history.back()">
+          <button class="back-button" type="button" aria-label="Mostrar siguiente perfil de ejemplo" title="Cambiar perfil de ejemplo">
             <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
@@ -75,7 +75,7 @@
         </section>
 
         <!-- Tarjeta de Información (Card View) -->
-        <section class="info-card">
+        <section class="info-card" aria-live="polite" aria-atomic="true">
           <div class="student-name-container">
             <h2 class="student-name-line">JOSE LUIS A<span class="name-stars">***</span></h2>
             <h2 class="student-name-line">H<span class="name-stars">***</span></h2>
@@ -165,5 +165,6 @@
       setInterval(updateClock, 1000);
     })();
   </script>
+  <script src="./profiles.js"></script>
 </body>
 </html>
