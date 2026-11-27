@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>TIU VIRTUAL</title>
+  <link rel="manifest" href="./manifest.json" />
+  <meta name="theme-color" content="#f8f9fd" />
+  <link rel="apple-touch-icon" href="./icon-192x192.png" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
@@ -166,5 +169,12 @@
     })();
   </script>
   <script src="./profiles.js"></script>
+  <script>
+    if ('serviceWorker' in navigator && location.protocol === 'https:') {
+      navigator.serviceWorker.register('./sw.js').catch(function (error) {
+        console.warn('No se pudo registrar la app web.', error);
+      });
+    }
+  </script>
 </body>
 </html>
