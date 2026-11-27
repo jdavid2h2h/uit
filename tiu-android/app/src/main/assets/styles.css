@@ -1,0 +1,422 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  weight: 400;
+  src: url('fonts/Roboto-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('fonts/Roboto-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/Roboto-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/RobotoCondensed-Bold.ttf') format('truetype');
+}
+
+:root {
+  --app-bg: #f3f2fb;
+  --app-bar-bg: #ffffff;
+  --app-bar-border: #e8e8ed;
+  --app-title: #1a1e26;
+  --clock-chip-bg: #d7d5fc;
+  --clock-text: #101828;
+  --date-text: #4b5563;
+  --card-bg: #ffffff;
+  --card-shadow: 0 4px 20px rgba(76, 68, 120, 0.07);
+  --primary-red: #dd0d1b;
+  --text-label: #505b6d;
+  --text-value: #2e384d;
+  --cloud-color: #cbc8f7;
+  --skyline-color: #dedcf8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--app-bg);
+  color: var(--text-value);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Contenedor móvil nativo */
+.device-shell {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background-color: var(--app-bg);
+  padding: 0;
+  width: 100%;
+}
+
+.mobile-frame {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--app-bg);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+/* Barra Superior (App Bar) */
+.app-bar {
+  background-color: var(--app-bar-bg);
+  height: 54px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--app-bar-border);
+  position: relative;
+  z-index: 25;
+}
+
+.app-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: var(--primary-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  transition: opacity 0.15s;
+}
+
+.back-button:active {
+  opacity: 0.6;
+}
+
+.app-title {
+  font-family: 'Roboto Condensed', 'Barlow Condensed', 'Segoe UI', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--app-title);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Contenido Principal */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  padding: 22px 0 20px;
+}
+
+/* Capa de Nubes y Paisaje */
+
+/* Capa de cielo y nubes vectoriales con animación continua hacia la izquierda */
+.clouds-sky {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.clouds-drift-track {
+  display: flex;
+  width: 200%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: driftLeft 4s linear infinite;
+  will-change: transform;
+}
+
+@keyframes driftLeft {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.clouds-group {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.cloud-svg {
+  position: absolute;
+  fill: #cdc8f7;
+  opacity: 0.92;
+}
+
+/* Patrón exacto y estilizado de nubes delgadas según la referencia */
+.cloud-svg.c-1 {
+  top: 295px;
+  left: 20px;
+  width: 54px;
+  height: 24px;
+}
+
+.cloud-svg.c-2 {
+  top: 340px;
+  left: 145px;
+  width: 36px;
+  height: 16px;
+}
+
+.cloud-svg.c-3 {
+  top: 285px;
+  left: 275px;
+  width: 64px;
+  height: 28px;
+}
+
+.cloud-svg.c-4 {
+  top: 385px;
+  left: 360px;
+  width: 48px;
+  height: 21px;
+}
+
+.cloud-svg.c-5 {
+  top: 415px;
+  left: 32px;
+  width: 34px;
+  height: 15px;
+}
+
+.cloud-svg.c-6 {
+  top: 435px;
+  left: 180px;
+  width: 46px;
+  height: 20px;
+}
+
+.cloud-svg.c-7 {
+  top: 410px;
+  left: 305px;
+  width: 60px;
+  height: 27px;
+}
+
+.cloud-svg.c-8 {
+  top: 460px;
+  left: 95px;
+  width: 30px;
+  height: 13px;
+}
+
+/* Zona del Reloj Digital */
+.clock-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+  margin-top: 8px;
+  margin-bottom: 18px;
+}
+
+.clock-card {
+  background-color: var(--clock-chip-bg);
+  min-width: 226px;
+  height: 68px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 22px;
+}
+
+.digital-time {
+  font-family: 'Roboto', sans-serif;
+  font-size: 43px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: var(--clock-text);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.digital-date {
+  margin-top: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--date-text);
+  letter-spacing: 0.1px;
+}
+
+/* Foto de Perfil Circular con amplia separación hacia la tarjeta de información */
+.avatar-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+  margin: 18px auto 90px auto;
+  width: 100%;
+}
+
+.avatar-container {
+  width: 204px;
+  height: 204px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  box-shadow: 0 4px 14px rgba(60, 50, 110, 0.08);
+  margin: 0 auto;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Tarjeta de Información (Card View) */
+.info-card {
+  position: relative;
+  z-index: 10;
+  background-color: var(--card-bg);
+  border-radius: 22px;
+  margin: 0 20px 10px 20px;
+  padding: 24px 20px 22px 20px;
+  box-shadow: var(--card-shadow);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.student-name-container {
+  margin-bottom: 18px;
+}
+
+.student-name-line {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 33px;
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--primary-red);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin: 0;
+  text-align: center;
+}
+
+.name-stars {
+  display: inline-block;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+  vertical-align: -2px;
+  letter-spacing: 1.5px;
+  margin-left: 2px;
+  color: var(--primary-red);
+}
+
+.details-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.detail-item {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detail-label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--text-label);
+  margin-bottom: 2px;
+}
+
+.detail-value {
+  font-family: 'Roboto', sans-serif;
+  font-size: 19.5px;
+  font-weight: 700;
+  color: var(--text-value);
+  letter-spacing: 0.3px;
+}
+
+.detail-career {
+  margin-top: 6px;
+  margin-bottom: 10px;
+  max-width: 330px;
+  text-align: center;
+}
+
+.detail-career span {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--text-value);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  line-height: 1.25;
+  display: inline-block;
+}
+
+.detail-campus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 4px;
+}
+
+.campus-pin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13.5px;
+  line-height: 1;
+}
+
+.campus-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--text-label);
+}
