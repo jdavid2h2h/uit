@@ -182,66 +182,42 @@ body {
 
 .cloud-svg {
   position: absolute;
-  fill: #cdc8f7;
-  opacity: 0.92;
+  fill: #c8cffb;
+  aspect-ratio: 56 / 25;
+  height: auto;
 }
 
-/* Patrón exacto y estilizado de nubes delgadas según la referencia */
 .cloud-svg.c-1 {
-  top: 290px;
-  left: 5%;
-  width: 45px;
-  height: 20px;
+  left: 12%;
+  top: 46%;
+  width: 8%;
 }
 
 .cloud-svg.c-2 {
-  top: 324px;
-  left: 75%;
-  width: 30px;
-  height: 14px;
+  left: 80.5%;
+  top: 43.3%;
+  width: 8%;
 }
 
 .cloud-svg.c-3 {
-  top: 340px;
-  left: 24%;
-  width: 59px;
-  height: 26px;
+  left: 57.6%;
+  top: 48.2%;
+  width: 16.2%;
 }
 
 .cloud-svg.c-4 {
-  top: 364px;
-  left: 68%;
-  width: 17px;
-  height: 8px;
+  left: 5.5%;
+  top: 51.6%;
+  width: 4.5%;
 }
 
 .cloud-svg.c-5 {
-  top: 374px;
-  left: -2%;
-  width: 28px;
-  height: 13px;
+  left: 30.8%;
+  top: 52.8%;
+  width: 8%;
 }
 
-.cloud-svg.c-6 {
-  top: 374px;
-  left: 93%;
-  width: 28px;
-  height: 13px;
-}
-
-.cloud-svg.c-7 {
-  top: 410px;
-  left: 305px;
-  width: 60px;
-  height: 27px;
-  display: none;
-}
-
-.cloud-svg.c-8 {
-  top: 460px;
-  left: 95px;
-  width: 30px;
-  height: 13px;
+.cloud-svg.c-6, .cloud-svg.c-7, .cloud-svg.c-8 {
   display: none;
 }
 
