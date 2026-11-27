@@ -98,6 +98,25 @@ body {
   flex-shrink: 0;
 }
 
+.background-toggle {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 48px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.background-toggle:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: -4px;
+}
+
+.background-still .clouds-drift-track {
+  animation: none;
+  transform: none;
+}
+
 .app-bar-left {
   display: flex;
   align-items: center;

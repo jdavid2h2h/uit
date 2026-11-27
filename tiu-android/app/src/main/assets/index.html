@@ -20,6 +20,7 @@
           </button>
           <h1 class="app-title">TIU VIRTUAL</h1>
         </div>
+        <button class="background-toggle" type="button" aria-label="Fondo quieto" aria-pressed="false"></button>
       </header>
 
       <!-- Contenido Principal -->
@@ -166,5 +167,12 @@
     })();
   </script>
   <script src="./profiles.js"></script>
+  <script>
+    const backgroundToggle = document.querySelector('.background-toggle');
+    backgroundToggle.addEventListener('click', function () {
+      const still = document.querySelector('.mobile-frame').classList.toggle('background-still');
+      backgroundToggle.setAttribute('aria-pressed', String(still));
+    });
+  </script>
 </body>
 </html>
